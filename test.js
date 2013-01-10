@@ -1,14 +1,20 @@
-var express = require('express'),
-    wordsmith = require('./')('gno3vu3y');
-    app = express();
+var wordsmith = require('./')('a079yuww'),
+    note = wordsmith.listen(8000);
 
-app.use(express.bodyParser());
-app.use(wordsmith.middleware);
+console.log('listening on port 8000');
 
-wordsmith.on('content', function(content) {
-  console.log('content', content);
+note.on('update', function(note) {
+  console.log('updating note...', note);
 });
 
-app.listen(8080, function() {
-  console.log('Listening on port 8080');
+note.on('publish', function(note) {
+  console.log('publishing note...', note);
+});
+
+note.on('unpublish', function(note) {
+  console.log('unpublishing note...', note);
+});
+
+note.on('delete', function(note) {
+  console.log('deleting note...', note);
 });
