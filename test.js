@@ -1,4 +1,4 @@
-var wordsmith = require('./')('a079yuww'),
+var wordsmith = require('./')(process.env.token),
     note = wordsmith.listen(8000);
 
 console.log('listening on port 8000');
