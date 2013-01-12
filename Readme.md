@@ -33,6 +33,28 @@ Listen to an `event` and call the supplied `fn`. Available events include:
 - `update` (note) : a note has been updated.
 - `delete` (note) : a `note` has been deleted.
 
+## Creating your own client:
+
+### Listen to the following requests:
+
+* Add the tag: `PUT /publish`
+* Remove the tag: `PUT /unpublish`
+* Update the tag: `PUT /`
+* Delete the tag: `DELETE /`
+
+### The body of the response is the following:
+
+```json
+body: {
+  title : ...
+  content : ...
+  created_at : ...
+  updated_at : ...
+  tags : ...
+  token : ...
+}
+```
+
 ## License
 
 (The MIT License)
