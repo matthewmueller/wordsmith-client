@@ -2,10 +2,14 @@
 
 Node.js wordsmith client.
 
+## Installation
+
+    npm install wordsmith
+
 ## Example
 
 ```js
-var wordsmith = require('./')('secret token'),
+var wordsmith = require('wordsmith')('secret token'),
     note = wordsmith.listen(8000);
 
 console.log('listening on port 8000');
