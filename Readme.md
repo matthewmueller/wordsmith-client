@@ -1,9 +1,39 @@
+# Wordsmith
 
-# wordsmith
+Node.js wordsmith client.
 
-  wordsmith client
+## API
 
-## License 
+### Wordsmith(token)
+
+Initialize a wordsmith client with the given user `token`.
+
+### wordsmith.base(url)
+
+Prefix the routes with a base `url`.
+
+### wordsmith.attach(server)
+
+Attach wordsmith to a `server`. Wordsmith supports `express`, `connect`, and plain jane `http.server`.
+
+Returns an EventEmitter instance.
+
+### wordsmith.listen(port)
+
+Create a server and bind to the given `port`.
+
+Returns an EventEmitter instance.
+
+### wordsmith.on(event, fn)
+
+Listen to an `event` and call the supplied `fn`. Available events include:
+
+- `publish` (note) : a new note has been published.
+- `unpublish` (note) : a note has been unpublished.
+- `update` (note) : a note has been updated.
+- `delete` (note) : a `note` has been deleted.
+
+## License
 
 (The MIT License)
 
